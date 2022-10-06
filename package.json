@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "description": "Intus is a framework agnostic client-side validation library.",
   "main": "index.js",
-  "directories": {
-    "assertions": "assertions",
-    "lib": "lib",
-    "rules": "rules"
-  },
+  "files": [
+    "assertions",
+    "lib",
+    "rules",
+    "index.js",
+    "readme.md",
+    "LICENSE.md"
+  ],
   "scripts": {
     "test": "vitest",
     "coverage": "vitest run --coverage"
