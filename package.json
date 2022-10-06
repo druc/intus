@@ -1,0 +1,33 @@
+{
+  "name": "intus",
+  "version": "0.0.0",
+  "description": "Intus is a framework agnostic client-side validation library.",
+  "main": "index.js",
+  "directories": {
+    "assertions": "assertions",
+    "lib": "lib",
+    "rules": "rules"
+  },
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "prettier": "2.7",
+    "vite": "^3.1.0",
+    "vitest": "^0.23.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/druc/intus.git"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": "Constantin Druc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/druc/intus/issues"
+  },
+  "homepage": "https://github.com/druc/intus#readme"
+}
