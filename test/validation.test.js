@@ -116,7 +116,7 @@ describe("validation", () => {
 
     expect(v.passes()).toBe(false);
     expect(v.errors()).toMatchObject({
-      first_name: "first name is required.",
+      first_name: "First name is required.",
     });
   });
 
@@ -137,8 +137,8 @@ describe("validation", () => {
 
     expect(validation.passes()).toBe(false);
     expect(validation.errors()).toMatchObject({
-      "users.0.name": "user name is required.",
-      "users.0.posts.0.title": "post title is required",
+      "users.0.name": "User name is required.",
+      "users.0.posts.0.title": "Post title is required",
     });
   });
 
@@ -161,7 +161,7 @@ describe("validation", () => {
 
     expect(validation.errors()).toMatchObject({
       "users.0.posts.0.title":
-        "users.0.posts.0.title must be at least 20 characters long.",
+        "Users.0.posts.0.title must be at least 20 characters long.",
     });
   });
 
@@ -175,16 +175,16 @@ describe("validation", () => {
         "users.*.posts.*.title": [isRequired()],
       },
       {
-        "users.*.name.isRequired": "user name is required",
+        "users.*.name.isRequired": "User name is required",
         "users.*.posts.*.title": {
-          isRequired: "post title is required",
+          isRequired: "Post title is required",
         },
       }
     );
 
     expect(validation.passes()).toBe(false);
     expect(validation.errors()).toMatchObject({
-      "users.0.posts.0.title": "post title is required",
+      "users.0.posts.0.title": "Post title is required",
     });
   });
 
@@ -274,7 +274,7 @@ describe("validation", () => {
     expect(validation.errors()).toMatchObject({
       name: "Name is definitely required",
       age: "The age field is required",
-      email: "email must be a valid email.",
+      email: "Email must be a valid email.",
     });
   });
 });

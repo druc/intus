@@ -11,7 +11,7 @@ it("isRequiredWith", function () {
 
   v = intus.validate({a: null, b: 2}, {a: [isRequiredWith("b")]});
   expect(v.passes()).toBe(false);
-  expect(v.errors()).toMatchObject({a: "a is required when b is present."});
+  expect(v.errors()).toMatchObject({a: "A is required when b is present."});
 });
 
 it("isRequiredWith many", function () {
@@ -21,7 +21,7 @@ it("isRequiredWith many", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    a: "a is required when b / c / d / e is present.",
+    a: "A is required when b / c / d / e is present.",
   });
 });
 
@@ -32,7 +32,7 @@ it("isRequiredWith nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "a.b": "a.b is required when c.d is present.",
+    "a.b": "A.b is required when c.d is present.",
   });
 });
 
@@ -43,6 +43,6 @@ it("isRequiredWith nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.a.b": "nested.0.a.b is required when nested.0.c.d is present.",
+    "nested.0.a.b": "Nested.0.a.b is required when nested.0.c.d is present.",
   });
 });

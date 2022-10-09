@@ -11,7 +11,7 @@ it("isRequiredUnless", function () {
 
   v = intus.validate({a: null, b: 1}, {a: [isRequiredUnless("b", 2)]});
   expect(v.passes()).toBe(false);
-  expect(v.errors()).toMatchObject({a: "a is required if b is 2."});
+  expect(v.errors()).toMatchObject({a: "A is required if b is 2."});
 });
 
 it("isRequiredUnless nested", function () {
@@ -27,7 +27,7 @@ it("isRequiredUnless nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.a": "nested.a is required if nested.b is 2.",
+    "nested.a": "Nested.a is required if nested.b is 2.",
   });
 });
 
@@ -44,6 +44,6 @@ it("isRequiredUnless nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.a": "nested.0.a is required if nested.0.b is 2.",
+    "nested.0.a": "Nested.0.a is required if nested.0.b is 2.",
   });
 });

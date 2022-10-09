@@ -16,7 +16,7 @@ it("isUrl", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isUrl()]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be a valid URL."});
+    expect(v.errors()).toMatchObject({t: "T must be a valid URL."});
   });
   valid.forEach(t =>
     expect(intus.validate({t}, {t: [isUrl()]}).passes()).toBe(true)
@@ -33,7 +33,7 @@ it("isUrl nested", function () {
   v = intus.validate({nested: {field: "not-url"}}, {"nested.field": [isUrl()]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must be a valid URL.",
+    "nested.field": "Nested.field must be a valid URL.",
   });
 });
 
@@ -50,6 +50,6 @@ it("isUrl nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a valid URL.",
+    "nested.0.field": "Nested.0.field must be a valid URL.",
   });
 });

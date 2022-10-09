@@ -25,7 +25,7 @@ it("isImage", function () {
   let v = intus.validate({file: pdf}, {file: [isImage()]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    file: "file must be an image.",
+    file: "File must be an image.",
   });
 });
 
@@ -42,7 +42,7 @@ it("isImage nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.file": "nested.file must be an image.",
+    "nested.file": "Nested.file must be an image.",
   });
 });
 
@@ -59,6 +59,6 @@ it("isImage nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.file": "nested.0.file must be an image.",
+    "nested.0.file": "Nested.0.file must be an image.",
   });
 });

@@ -23,7 +23,7 @@ it("isEmail", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isEmail()]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be a valid email."});
+    expect(v.errors()).toMatchObject({t: "T must be a valid email."});
   });
   valid.forEach(t =>
     expect(intus.validate({t}, {t: [isEmail()]}).passes()).toBe(true)
@@ -43,7 +43,7 @@ it("isEmail nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must be a valid email.",
+    "nested.field": "Nested.field must be a valid email.",
   });
 });
 
@@ -60,6 +60,6 @@ it("isEmail nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a valid email.",
+    "nested.0.field": "Nested.0.field must be a valid email.",
   });
 });

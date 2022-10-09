@@ -13,7 +13,7 @@ it("isExtension", function () {
   let validation = intus.validate({file}, {file: [isExtension("pdf", "jpg")]});
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    file: "file must be a file of type pdf / jpg.",
+    file: "File must be a file of type pdf / jpg.",
   });
 });
 
@@ -32,7 +32,7 @@ it("isExtension nested", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.file": "nested.file must be a file of type pdf / jpg.",
+    "nested.file": "Nested.file must be a file of type pdf / jpg.",
   });
 });
 
@@ -51,6 +51,6 @@ it("isExtension nested star", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.0.file": "nested.0.file must be a file of type pdf / jpg.",
+    "nested.0.file": "Nested.0.file must be a file of type pdf / jpg.",
   });
 });

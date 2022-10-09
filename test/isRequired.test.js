@@ -17,7 +17,7 @@ it("validates isRequired", function () {
   invalid.forEach(t => {
     let validation = intus.validate({t}, {t: [isRequired()]});
     expect(validation.passes()).toBe(false);
-    expect(validation.errors()).toMatchObject({t: "t is required."});
+    expect(validation.errors()).toMatchObject({t: "T is required."});
   });
 
   valid.forEach(t =>
@@ -35,7 +35,7 @@ it("validates isRequired nested", function () {
   let validation = intus.validate({}, {"nested.field": [isRequired()]});
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.field": "nested.field is required.",
+    "nested.field": "Nested.field is required.",
   });
 });
 
@@ -52,6 +52,6 @@ it("validates isRequired nested star", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field is required.",
+    "nested.0.field": "Nested.0.field is required.",
   });
 });

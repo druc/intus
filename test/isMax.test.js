@@ -10,7 +10,7 @@ it("isMax", function () {
   invalid.forEach(t => {
     let validation = intus.validate({t}, {t: [isMax(99)]});
     expect(validation.passes()).toBe(false);
-    expect(validation.errors()).toMatchObject({t: "t must be at most 99."});
+    expect(validation.errors()).toMatchObject({t: "T must be at most 99."});
   });
 
   valid.forEach(t =>
@@ -25,7 +25,7 @@ it("isMax takes length into account when value is a string", function () {
   v = intus.validate({name: "abcd"}, {name: [isMax(3)]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    name: "name must be at most 3 characters long.",
+    name: "Name must be at most 3 characters long.",
   });
 });
 
@@ -36,7 +36,7 @@ it("isMax takes length into account when value is an array", function () {
   v = intus.validate({items: [1, 2, 3, 4]}, {items: [isMax(3)]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    items: "items must have at most 3 items.",
+    items: "Items must have at most 3 items.",
   });
 });
 
@@ -53,7 +53,7 @@ it("isMax takes size into account when value is a file", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    file: "file must be at most 1MB.",
+    file: "File must be at most 1MB.",
   });
 });
 
@@ -64,7 +64,7 @@ it("isMax nested", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.field": "nested.field must be at most 99.",
+    "nested.field": "Nested.field must be at most 99.",
   });
 });
 
@@ -75,7 +75,7 @@ it("isMax nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be at most 99.",
+    "nested.0.field": "Nested.0.field must be at most 99.",
   });
 });
 
@@ -94,9 +94,9 @@ it("isMax message based on type", function () {
   expect(v.passes()).toBe(false);
 
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be at most 1.",
-    "nested.1.field": "nested.1.field must be at most 1 characters long.",
-    "nested.2.field": "nested.2.field must be at most 1MB.",
-    "nested.3.field": "nested.3.field must have at most 1 items.",
+    "nested.0.field": "Nested.0.field must be at most 1.",
+    "nested.1.field": "Nested.1.field must be at most 1 characters long.",
+    "nested.2.field": "Nested.2.field must be at most 1MB.",
+    "nested.3.field": "Nested.3.field must have at most 1 items.",
   });
 });

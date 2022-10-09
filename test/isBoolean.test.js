@@ -9,7 +9,7 @@ it("isBoolean", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isBoolean()]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be a boolean."});
+    expect(v.errors()).toMatchObject({t: "T must be a boolean."});
   });
   valid.forEach(t =>
     expect(intus.validate({t}, {t: [isBoolean()]}).passes()).toBe(true)
@@ -29,7 +29,7 @@ it("isBoolean nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must be a boolean.",
+    "nested.field": "Nested.field must be a boolean.",
   });
 });
 
@@ -46,6 +46,6 @@ it("isBoolean nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a boolean.",
+    "nested.0.field": "Nested.0.field must be a boolean.",
   });
 });

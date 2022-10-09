@@ -24,7 +24,7 @@ it("isGte", function () {
   v = intus.validate({a: 1, b: 2}, {a: [isGte("b")]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    a: "a must be greater or equal to 2.",
+    a: "A must be greater or equal to 2.",
   });
 });
 
@@ -38,7 +38,7 @@ it("isGte nested", function () {
   v = intus.validate({nested: {a: 1, b: 2}}, {"nested.a": [isGte("nested.b")]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.a": "nested.a must be greater or equal to 2.",
+    "nested.a": "Nested.a must be greater or equal to 2.",
   });
 });
 
@@ -55,6 +55,6 @@ it("isGte nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.a": "nested.0.a must be greater or equal to 2.",
+    "nested.0.a": "Nested.0.a must be greater or equal to 2.",
   });
 });

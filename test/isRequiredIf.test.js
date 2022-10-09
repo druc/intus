@@ -6,7 +6,7 @@ it("isRequiredIf", function () {
   let v = intus.validate({age: 12}, {name: [isRequiredIf("age", 12)]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    name: "name is required if age is 12.",
+    name: "Name is required if age is 12.",
   });
 
   v = intus.validate(
@@ -23,7 +23,7 @@ it("isRequiredIf nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field is required if age is 12.",
+    "nested.field": "Nested.field is required if age is 12.",
   });
 });
 
@@ -34,7 +34,7 @@ it("isRequiredIf nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field is required if age is 12.",
+    "nested.0.field": "Nested.0.field is required if age is 12.",
   });
 });
 
@@ -46,6 +46,6 @@ it("isRequiredIf overwrite field name", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "something is required if varsta is 12.",
+    "nested.0.field": "Something is required if varsta is 12.",
   });
 });

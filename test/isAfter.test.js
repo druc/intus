@@ -16,7 +16,7 @@ it("isAfter", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    date: `date must be a date after ${afterDate}.`,
+    date: `Date must be a date after ${afterDate}.`,
   });
 });
 
@@ -91,7 +91,7 @@ it("isAfter nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.date": `nested.date must be a date after ${afterDate}.`,
+    "nested.date": `Nested.date must be a date after ${afterDate}.`,
   });
 });
 
@@ -109,6 +109,6 @@ it("isAfter nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.date": `nested.0.date must be a date after ${afterDate}.`,
+    "nested.0.date": `Nested.0.date must be a date after ${afterDate}.`,
   });
 });

@@ -20,7 +20,7 @@ it("isLt", function () {
 
   v = intus.validate({a: 2, b: 2}, {a: [isLt("b")]});
   expect(v.passes()).toBe(false);
-  expect(v.errors()).toMatchObject({a: "a must be less than 2."});
+  expect(v.errors()).toMatchObject({a: "A must be less than 2."});
 });
 
 it("isLt nested", function () {
@@ -33,7 +33,7 @@ it("isLt nested", function () {
   v = intus.validate({nested: {a: 2, b: 2}}, {"nested.a": [isLt("nested.b")]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.a": "nested.a must be less than 2.",
+    "nested.a": "Nested.a must be less than 2.",
   });
 });
 
@@ -50,6 +50,6 @@ it("isLt nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.a": "nested.0.a must be less than 2.",
+    "nested.0.a": "Nested.0.a must be less than 2.",
   });
 });

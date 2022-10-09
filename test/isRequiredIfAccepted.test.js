@@ -12,7 +12,7 @@ it("isRequiredIfAccepted", function () {
   v = intus.validate({terms: "on"}, {name: [isRequiredIfAccepted("terms")]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    name: "name is required if terms is accepted.",
+    name: "Name is required if terms is accepted.",
   });
 });
 
@@ -29,7 +29,7 @@ it("isRequiredIfAccepted nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field is required if terms is accepted.",
+    "nested.field": "Nested.field is required if terms is accepted.",
   });
 });
 
@@ -46,7 +46,7 @@ it("isRequiredIfAccepted nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field is required if sub.terms is accepted.",
+    "nested.0.field": "Nested.0.field is required if sub.terms is accepted.",
   });
 });
 
@@ -58,6 +58,6 @@ it("isRequiredIfAccepted nested overwrite attribute translation", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "something is required if abc is accepted.",
+    "nested.0.field": "Something is required if abc is accepted.",
   });
 });

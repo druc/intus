@@ -28,7 +28,7 @@ it("isAccepted nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must be accepted.",
+    "nested.field": "Nested.field must be accepted.",
   });
 });
 
@@ -45,6 +45,6 @@ it("isAccepted nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be accepted.",
+    "nested.0.field": "Nested.0.field must be accepted.",
   });
 });

@@ -11,12 +11,12 @@ it("should validate isSame", function () {
 
   v = intus.validate({a: 1, b: 2}, {a: [isSame("b")]});
   expect(v.passes()).toBe(false);
-  expect(v.errors()).toMatchObject({a: "a must be the same as b."});
+  expect(v.errors()).toMatchObject({a: "A must be the same as b."});
 
   v = intus.validate({a: null, b: 2}, {a: [isSame("b")]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    a: "a must be the same as b.",
+    a: "A must be the same as b.",
   });
 });
 
@@ -33,7 +33,7 @@ it("should validate isSame nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.a": "nested.a must be the same as nested.b.",
+    "nested.a": "Nested.a must be the same as nested.b.",
   });
 });
 
@@ -50,6 +50,6 @@ it("should validate isSame nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.a": "nested.0.a must be the same as nested.0.b.",
+    "nested.0.a": "Nested.0.a must be the same as nested.0.b.",
   });
 });

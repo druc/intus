@@ -16,7 +16,7 @@ it("isBefore", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    date: `date must be a date before ${beforeDate}.`,
+    date: `Date must be a date before ${beforeDate}.`,
   });
 });
 
@@ -50,7 +50,7 @@ it("isBefore nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.date": `nested.date must be a date before ${beforeDate}.`,
+    "nested.date": `Nested.date must be a date before ${beforeDate}.`,
   });
 });
 
@@ -68,7 +68,7 @@ it("isBefore nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.date": `nested.0.date must be a date before ${beforeDate}.`,
+    "nested.0.date": `Nested.0.date must be a date before ${beforeDate}.`,
   });
 });
 
@@ -92,7 +92,7 @@ it("isBefore attributes", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    start: `start must be a date before ${beforeDate}.`,
+    start: `Start must be a date before ${beforeDate}.`,
   });
 });
 
@@ -120,7 +120,7 @@ it("isBefore nested attributes", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.start": `nested.start must be a date before ${beforeDate}.`,
+    "nested.start": `Nested.start must be a date before ${beforeDate}.`,
   });
 });
 
@@ -152,6 +152,6 @@ it("isBefore nested star attributes", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.start": `nested.0.start must be a date before ${beforeDate}.`,
+    "nested.0.start": `Nested.0.start must be a date before ${beforeDate}.`,
   });
 });
