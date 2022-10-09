@@ -9,8 +9,13 @@ Apart from its ease of use and having a gazillion [rules](#rules) to pick from, 
 other fields, for example `requiredIf('otherField', 10)`, and the ability to validate nested fields and array items using
 wildcards: `{"lines.*.qty: [isMin(1)]}`.
 
+## Installation
+```bash
+npm install intus
+```
+
 ## Usage
-Import intus, provide data, rules, and messages (optional). Profit!
+Import, provide data, rules, and messages (optional). Profit!
 
 ```js
 import intus from "intus";
