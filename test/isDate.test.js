@@ -15,7 +15,7 @@ it("isDate", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isDate()]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be a valid date."});
+    expect(v.errors()).toMatchObject({t: "T must be a valid date."});
   });
 
   valid.forEach(t =>
@@ -36,7 +36,7 @@ it("isDate nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must be a valid date.",
+    "nested.field": "Nested.field must be a valid date.",
   });
 });
 
@@ -53,6 +53,6 @@ it("isDate nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a valid date.",
+    "nested.0.field": "Nested.0.field must be a valid date.",
   });
 });

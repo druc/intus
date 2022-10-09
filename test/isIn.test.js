@@ -9,7 +9,7 @@ it("isIn", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isIn("hey", "no", "ok")]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be one of hey / no / ok."});
+    expect(v.errors()).toMatchObject({t: "T must be one of hey / no / ok."});
   });
 
   valid.forEach(t =>
@@ -32,7 +32,7 @@ it("isIn nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must be one of this / and / that.",
+    "nested.field": "Nested.field must be one of this / and / that.",
   });
 });
 
@@ -49,6 +49,6 @@ it("isIn nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be one of this / and / that.",
+    "nested.0.field": "Nested.0.field must be one of this / and / that.",
   });
 });

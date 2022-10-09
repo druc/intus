@@ -6,8 +6,8 @@ it("isDistinct", function () {
   let v = intus.validate({users: [1, "1"]}, {"users.*": [isDistinct()]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "users.0": "users.0 must be distinct.",
-    "users.1": "users.1 must be distinct.",
+    "users.0": "Users.0 must be distinct.",
+    "users.1": "Users.1 must be distinct.",
   });
 });
 

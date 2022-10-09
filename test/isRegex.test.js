@@ -9,7 +9,7 @@ it("isRegex", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isRegex(/^[0-9]+$/)]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must match regex /^[0-9]+$/."});
+    expect(v.errors()).toMatchObject({t: "T must match regex /^[0-9]+$/."});
   });
 
   valid.forEach(t =>
@@ -31,7 +31,7 @@ it("isRegex nested", function () {
 
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must match regex /^[0-9]+$/.",
+    "nested.field": "Nested.field must match regex /^[0-9]+$/.",
   });
 });
 
@@ -49,6 +49,6 @@ it("isRegex nested star", function () {
 
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must match regex /^[0-9]+$/.",
+    "nested.0.field": "Nested.0.field must match regex /^[0-9]+$/.",
   });
 });

@@ -17,7 +17,7 @@ it("isRequiredWithout", function () {
 
   v = intus.validate({a: null}, {a: [isRequiredWithout("b")]});
   expect(v.passes()).toBe(false);
-  expect(v.errors()).toMatchObject({a: "a is required when b is missing."});
+  expect(v.errors()).toMatchObject({a: "A is required when b is missing."});
 });
 
 it("isRequiredWithout multiple", function () {
@@ -33,7 +33,7 @@ it("isRequiredWithout multiple", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    a: "a is required when b / c / d is missing.",
+    a: "A is required when b / c / d is missing.",
   });
 });
 
@@ -50,7 +50,7 @@ it("isRequiredWithout nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.a": "nested.a is required when nested.b is missing.",
+    "nested.a": "Nested.a is required when nested.b is missing.",
   });
 });
 
@@ -67,6 +67,6 @@ it("isRequiredWithout nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.a": "nested.0.a is required when nested.0.b is missing.",
+    "nested.0.a": "Nested.0.a is required when nested.0.b is missing.",
   });
 });

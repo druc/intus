@@ -22,7 +22,7 @@ it("isBeforeOrEqual", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    date: `date must be a date before or equal to ${dateAfter}.`,
+    date: `Date must be a date before or equal to ${dateAfter}.`,
   });
 });
 
@@ -97,7 +97,7 @@ it("isBeforeOrEqual nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.date": `nested.date must be a date before or equal to ${dateAfter}.`,
+    "nested.date": `Nested.date must be a date before or equal to ${dateAfter}.`,
   });
 });
 
@@ -115,6 +115,6 @@ it("isBeforeOrEqual nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.date": `nested.0.date must be a date before or equal to ${dateAfter}.`,
+    "nested.0.date": `Nested.0.date must be a date before or equal to ${dateAfter}.`,
   });
 });

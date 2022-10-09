@@ -31,7 +31,7 @@ it("isNotRegex nested", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must not match regex /^[0-9]+$/.",
+    "nested.field": "Nested.field must not match regex /^[0-9]+$/.",
   });
 });
 
@@ -48,6 +48,6 @@ it("isNotRegex nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must not match regex /^[0-9]+$/.",
+    "nested.0.field": "Nested.0.field must not match regex /^[0-9]+$/.",
   });
 });

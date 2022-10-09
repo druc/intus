@@ -9,7 +9,7 @@ it("isJSON", function () {
   invalid.forEach(t => {
     let v = intus.validate({t: t}, {t: [isJSON()]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be a valid JSON."});
+    expect(v.errors()).toMatchObject({t: "T must be a valid JSON."});
   });
   valid.forEach(t =>
     expect(intus.validate({t: t}, {t: [isJSON()]}).passes()).toBe(true)
@@ -23,7 +23,7 @@ it("isJSON nested", function () {
   v = intus.validate({nested: {field: "not"}}, {"nested.field": [isJSON()]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.field": "nested.field must be a valid JSON.",
+    "nested.field": "Nested.field must be a valid JSON.",
   });
 });
 
@@ -40,6 +40,6 @@ it("isJSON nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a valid JSON.",
+    "nested.0.field": "Nested.0.field must be a valid JSON.",
   });
 });

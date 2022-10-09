@@ -9,7 +9,7 @@ it("isNumeric", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isNumeric()]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be a number."});
+    expect(v.errors()).toMatchObject({t: "T must be a number."});
   });
 
   valid.forEach(t =>
@@ -24,7 +24,7 @@ it("isNumeric nested", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.field": "nested.field must be a number.",
+    "nested.field": "Nested.field must be a number.",
   });
 });
 
@@ -35,6 +35,6 @@ it("isNumeric nested star", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a number.",
+    "nested.0.field": "Nested.0.field must be a number.",
   });
 });

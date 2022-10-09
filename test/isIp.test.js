@@ -10,7 +10,7 @@ it("validates isIp", function () {
     let validation = intus.validate({t}, {t: [isIp()]});
     expect(validation.passes()).toBe(false);
     expect(validation.errors()).toMatchObject({
-      t: "t must be a valid IP address.",
+      t: "T must be a valid IP address.",
     });
   });
 
@@ -32,7 +32,7 @@ it("validates isIp nested", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.field": "nested.field must be a valid IP address.",
+    "nested.field": "Nested.field must be a valid IP address.",
   });
 });
 
@@ -49,6 +49,6 @@ it("validates isIp nested star", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a valid IP address.",
+    "nested.0.field": "Nested.0.field must be a valid IP address.",
   });
 });

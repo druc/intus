@@ -18,7 +18,7 @@ it("isMime", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    file: "file must be a file of type application/pdf / application/json.",
+    file: "File must be a file of type application/pdf / application/json.",
   });
 });
 
@@ -34,7 +34,7 @@ it("isMime nested", function () {
   v = intus.validate({nested: {file}}, {"nested.file": [isMime("image/jpeg")]});
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.file": "nested.file must be a file of type image/jpeg.",
+    "nested.file": "Nested.file must be a file of type image/jpeg.",
   });
 });
 
@@ -53,6 +53,6 @@ it("isMime nested star", function () {
   );
   expect(v.passes()).toBe(false);
   expect(v.errors()).toMatchObject({
-    "nested.0.file": "nested.0.file must be a file of type image/jpeg.",
+    "nested.0.file": "Nested.0.file must be a file of type image/jpeg.",
   });
 });

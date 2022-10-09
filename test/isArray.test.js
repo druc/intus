@@ -9,7 +9,7 @@ it("isArray", function () {
   invalid.forEach(t => {
     let v = intus.validate({t}, {t: [isArray()]});
     expect(v.passes()).toBe(false);
-    expect(v.errors()).toMatchObject({t: "t must be a valid array."});
+    expect(v.errors()).toMatchObject({t: "T must be a valid array."});
   });
 
   valid.forEach(t =>
@@ -24,7 +24,7 @@ it("isArray nested", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.field": "nested.field must be a valid array.",
+    "nested.field": "Nested.field must be a valid array.",
   });
 });
 
@@ -35,6 +35,6 @@ it("isArray nested star", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be a valid array.",
+    "nested.0.field": "Nested.0.field must be a valid array.",
   });
 });

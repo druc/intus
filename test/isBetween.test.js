@@ -10,7 +10,7 @@ it("isBetween", function () {
     let validation = intus.validate({t}, {t: [isBetween(17, 20)]});
     expect(validation.passes()).toBe(false);
     expect(validation.errors()).toMatchObject({
-      t: "t must be between or equal to 17 and 20.",
+      t: "T must be between or equal to 17 and 20.",
     });
   });
 
@@ -26,7 +26,7 @@ it("isBetween nested", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.field": "nested.field must be between or equal to 17 and 20.",
+    "nested.field": "Nested.field must be between or equal to 17 and 20.",
   });
 });
 
@@ -37,6 +37,6 @@ it("isBetween nested star", function () {
   );
   expect(validation.passes()).toBe(false);
   expect(validation.errors()).toMatchObject({
-    "nested.0.field": "nested.0.field must be between or equal to 17 and 20.",
+    "nested.0.field": "Nested.0.field must be between or equal to 17 and 20.",
   });
 });
