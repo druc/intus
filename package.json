@@ -1,6 +1,6 @@
 {
   "name": "intus",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Intus is a framework agnostic client-side validation library.",
   "main": "index.js",
   "files": [
