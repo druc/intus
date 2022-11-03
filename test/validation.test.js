@@ -254,7 +254,7 @@ describe("validation", () => {
     });
   });
 
-  it("allows replacing default error messages ", function () {
+  it("allows replacing default error messages", function () {
     let intus = new Intus({
       isRequired: "The :attribute field is required",
       "name.isRequired": "Name is definitely required",
@@ -276,5 +276,19 @@ describe("validation", () => {
       age: "The age field is required",
       email: "Email must be a valid email.",
     });
+  });
+
+  it("checks if validation fails", function () {
+    let validation = intus.validate(
+      {
+        email: "not-valid",
+      },
+      {
+        email: [isRequired(), isEmail()],
+      }
+    );
+
+    expect(validation.fails()).toBe(true);
+    expect(validation.passes()).toBe(false);
   });
 });
