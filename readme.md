@@ -7,7 +7,7 @@
 
 Apart from its ease of use and having a gazillion [rules](#rules) to pick from, what makes intus great is having rules based on
 other fields, for example `requiredIf('otherField', 10)`, and the ability to validate nested fields and array items using
-wildcards: `{"lines.*.qty: [isMin(1)]}`.
+wildcards: `{"lines.*.qty": [isMin(1)]}`.
 
 ## Installation
 ```bash
