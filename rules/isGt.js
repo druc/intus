@@ -3,26 +3,26 @@ import {getMessage, initializeAndGatherData, replaceWildcard} from "../lib";
 
 export default function (other) {
   return function isGt({value, data, attribute, messages}) {
+    let _other = replaceWildcard(other, attribute);
+    let _data = initializeAndGatherData(_other, data);
+
     return {
       passes() {
         if (assertEmpty(value)) {
           return true;
         }
 
-        other = replaceWildcard(other, attribute);
-        data = initializeAndGatherData(other, data);
-
-        if (assertEmpty(data[other])) {
+        if (assertEmpty(_data[_other])) {
           return true;
         }
 
-        return Number(value) > Number(data[other]);
+        return Number(value) > Number(_data[_other]);
       },
       message(msg = ":attribute must be greater than :otherValue.") {
         return msg
           .replaceAll(":value", value)
-          .replaceAll(":otherValue", data[other])
-          .replaceAll(":other", getMessage(other, messages))
+          .replaceAll(":otherValue", _data[_other])
+          .replaceAll(":other", getMessage(_other, messages))
           .replaceAll(":attribute", getMessage(attribute, messages));
       },
     };
